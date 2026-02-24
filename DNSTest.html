@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set, viewport settings, and description -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="v2.0">
+
+    <link rel="icon" href="../statics/images/favicon.ico" type="image/x-icon">
+    <title>Service: DNSTest</title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../statics/css/style.css">
+
+    <!-- Link to external script -->
+    <script type="text/javascript" src="../statics/js/script.js"></script>
+</head>
+
+<body>
+
+<div class="box">
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <!-- Link to Home page -->
+        <a href="../index.html">Home</a>
+        <!-- Separator for navigation links -->
+        <a class="sep"> | </a>
+        <!-- Dropdown menu for Service links -->
+        <div class="drop">
+            <!-- Dropdown button -->
+            <button class="dropbtn">Service</button>
+            <!-- Dropdown content -->
+            <div class="dropdown">
+                <!-- Active link for current page -->
+                <a class="active" title="Test DNS Servers">DNSTest</a>
+                <!-- Link to SiteViewer service -->
+                <a title="Website Browser" href="./SiteViewer.html">SiteViewer</a>
+                <!-- Link to UserCheck service -->
+                <a title="User Management" href="./UserCheck.html">UserCheck</a>
+            </div>
+        </div>
+        <!-- Navigation link aligned to the right -->
+        <a style="float:right" title="Created By MKinG" href="#">GUI</a>
+    </div>
+
+    <!-- Main content holder -->
+    <div class="boxHolder">
+
+        <!-- Main container for the form -->
+        <div class="formHolder" style="max-width: 520px; width: 90%;">
+
+            <!-- Form heading -->
+            <h1>DNSTest</h1>
+
+            <!-- DNS test form -->
+            <form id="dnsForm" action="#" method="POST">
+
+                <!-- Single DNS input (optional fallback) -->
+                <label for="_dns">Single DNS Server (optional):</label>
+                <input type="text" id="_dns" name="_dns" placeholder="8.8.8.8 or 1.1.1.1"
+                       title="Enter one DNS server IP">
+
+                <!-- Domain to test input -->
+                <label for="_domain">Test Domain :</label>
+                <input type="text" id="_domain" name="_domain" placeholder="google.com" value="google.com"
+                       title="Domain to resolve" required>
+
+                <!-- DNS list textarea for multiple servers -->
+                <label for="_dnsList">DNS List:</label>
+                <textarea id="_dnsList" rows="10"
+                          placeholder="Paste multiple DNS servers here (one per line)&#10;Example:&#10;8.8.8.8&#10;1.1.1.1&#10;9.9.9.9"></textarea>
+
+                <!-- Submit button -->
+                <button type="submit">Run Test on All DNS</button>
+
+                <!-- Output textarea for results -->
+                <label for="_output">Results :</label>
+                <textarea id="_output" rows="12" placeholder="Test results will appear here..." readonly></textarea>
+
+            </form>
+
+            <!-- Additional information note -->
+            <div style="margin-top: 15px; font-size: 0.9em; color: #888; line-height: 1.4;">
+                • Supported formats: one IP per line (IPv4 or IPv6)<br>
+                • Lines starting with # or empty lines are ignored<br>
+                • Common public DNS: Google, Cloudflare, Quad9, AdGuard, etc.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Execute inline scripts -->
+<script>
+    // Set random semi-transparent background color
+    document.body.style.backgroundColor = randomColorRGBA(0.08);
+</script>
+
+</body>
+</html>
