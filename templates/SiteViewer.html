@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <!-- Meta tags for character set, viewport settings, and description -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="v2.0">
+
+    <link rel="icon" href="../statics/images/favicon.ico" type="image/x-icon">
+    <title>Service: SiteViewer</title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../statics/css/style.css">
+
+    <!-- Link to external script -->
+    <script type="text/javascript" src="../statics/js/script.js"></script>
+</head>
+
+<body>
+
+<div class="box">
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <!-- Link to Home page -->
+        <a href="../index.html">Home</a>
+        <!-- Separator for navigation links -->
+        <a class="sep"> | </a>
+        <!-- Dropdown menu for Service links -->
+        <div class="drop">
+            <!-- Dropdown button -->
+            <button class="dropbtn">Service</button>
+            <!-- Dropdown content -->
+            <div class="dropdown">
+                <!-- Link to DNSTest service -->
+                <a title="Test DNS Servers" href="./DNSTest.html">DNSTest</a>
+                <!-- Active link for current page -->
+                <a class="active" title="Website Browser">SiteViewer</a>
+                <!-- Link to UserCheck service -->
+                <a title="User Management" href="./UserCheck.html">UserCheck</a>
+            </div>
+        </div>
+        <!-- Navigation link aligned to the right -->
+        <a style="float:right" title="Created By MKinG" href="#">GUI</a>
+    </div>
+
+    <!-- Main content holder -->
+    <div class="boxHolder">
+
+        <!-- Main container for the form -->
+        <div class="formHolder" style="max-width: 500px; width: 92%;">
+
+            <!-- Form heading -->
+            <h1>SiteViewer</h1>
+
+            <!-- Site viewer simulation form -->
+            <form id="viewerForm" action="#" method="POST">
+
+                <!-- Target URL input -->
+                <label for="_url">Target URL :</label>
+                <input type="url" id="_url" name="_url" placeholder="https://example.com"
+                       title="Full URL including https://" required>
+
+                <!-- Optional port input -->
+                <label for="_port">Port (optional) :</label>
+                <input type="number" id="_port" name="_port" min="1" max="65535" placeholder="443 (default for HTTPS)"
+                       title="Target port if not standard">
+
+                <!-- Number of views input -->
+                <label for="_views">Number of Views :</label>
+                <input type="number" id="_views" name="_views" min="1" max="10000" placeholder="e.g. 100"
+                       title="How many times to view the page" required>
+
+                <!-- Delay between views input -->
+                <label for="_delay">Delay between views (seconds) :</label>
+                <input type="number" id="_delay" name="_delay" min="1" max="300" placeholder="e.g. 60"
+                       title="Pause time after each view" value="60">
+
+                <!-- Proxy input (currently disabled) -->
+                <label for="_proxy">Proxy (coming soon) :</label>
+                <input type="text" id="_proxy" name="_proxy" placeholder="e.g. http://1.1.1.1:8080"
+                       title="Proxy support not active yet" disabled>
+
+                <!-- Submit button -->
+                <button type="submit" id="submitBtn">Start Views</button>
+
+                <!-- Output log textarea -->
+                <label for="_output">Operation Log :</label>
+                <textarea id="_output" rows="10" placeholder="Progress and results will appear here..."
+                          readonly></textarea>
+
+                <!-- Status message container -->
+                <div id="status"
+                     style="margin-top: 12px; font-size: 0.95em; text-align: center; min-height: 1.4em;"></div>
+
+            </form>
+
+            <!-- Usage warning note -->
+            <div style="margin-top: 20px; font-size: 0.85em; color: #aaa; text-align: center; line-height: 1.4;">
+                This tool simulates page views from server-side.<br>
+                Use responsibly — artificial traffic may violate platform terms or laws.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Execute inline scripts -->
+<script>
+    // Set random semi-transparent background color
+    document.body.style.backgroundColor = randomColorRGBA(0.08);
+</script>
+
+</body>
+</html>

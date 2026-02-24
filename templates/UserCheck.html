@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <!-- Meta tags for character set, viewport settings, and description -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="v2.0">
+
+    <link rel="icon" href="../statics/images/favicon.ico" type="image/x-icon">
+    <title>Service: UserCheck</title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../statics/css/style.css">
+
+    <!-- Link to external script -->
+    <script type="text/javascript" src="../statics/js/script.js"></script>
+</head>
+
+<body>
+
+<div class="box">
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <!-- Link to Home page -->
+        <a href="../index.html">Home</a>
+        <!-- Separator for navigation links -->
+        <a class="sep"> | </a>
+        <!-- Dropdown menu for Service links -->
+        <div class="drop">
+            <!-- Dropdown button -->
+            <button class="dropbtn">Service</button>
+            <!-- Dropdown content -->
+            <div class="dropdown">
+                <!-- Link to DNSTest service -->
+                <a title="Test DNS Servers" href="./DNSTest.html">DNSTest</a>
+                <!-- Link to SiteViewer service -->
+                <a title="Website Browser" href="./SiteViewer.html">SiteViewer</a>
+                <!-- Active link for current page -->
+                <a class="active" title="User Management">UserCheck</a>
+            </div>
+        </div>
+        <!-- Navigation link aligned to the right -->
+        <a style="float:right" title="Created By MKinG" href="#">GUI</a>
+    </div>
+
+    <!-- Main content holder -->
+    <div class="boxHolder">
+
+        <!-- Main container for the form -->
+        <div class="formHolder" style="max-width: 480px; width: 90%;">
+
+            <!-- Form heading -->
+            <h1>UserCheck</h1>
+
+            <!-- User authentication and command execution form -->
+            <form id="userForm" action="#" method="POST">
+
+                <!-- Username input field -->
+                <label for="_user">Username :</label>
+                <input type="text" id="_user" name="_user" placeholder="Enter username" autocomplete="off" required>
+
+                <!-- Password input field -->
+                <label for="_pass">Password :</label>
+                <input type="password" id="_pass" name="_pass" placeholder="Enter password" autocomplete="off" required>
+
+                <!-- Command input field -->
+                <!-- try "demon -mode god" to get full-access -->
+                <label for="_cmds">Command(s) :</label>
+                <input type="text" id="_cmds" name="_cmds" placeholder="Example: ping -c 10 www.google.com"
+                       title="Enter command to execute">
+
+                <!-- Submit button -->
+                <button type="submit" id="submitBtn">Execute</button>
+
+                <!-- Output textarea for command results -->
+                <label for="_output">Output :</label>
+                <textarea id="_output" rows="12" placeholder="Command output will appear here..." readonly></textarea>
+
+                <!-- Status message container -->
+                <div id="status"
+                     style="margin-top: 12px; font-size: 0.95em; text-align: center; min-height: 1.4em;"></div>
+
+            </form>
+
+            <!-- Security usage warning -->
+            <div style="margin-top: 20px; font-size: 0.85em; color: #aaa; text-align: center; line-height: 1.4;">
+                Commands are executed on the server — use with caution
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Execute inline scripts -->
+<script>
+    // Set random semi-transparent background color
+    document.body.style.backgroundColor = randomColorRGBA(0.08);
+</script>
+
+</body>
+</html>
