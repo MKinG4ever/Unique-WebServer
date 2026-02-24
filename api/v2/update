@@ -1,0 +1,23 @@
+{
+  "api_version": "2.0",
+  "application": "NexusFeature",
+  "update": {
+    "latest_version": "2.1.4",
+    "release_date": "2026-02-23",
+    "mandatory": false,
+    "download_url": "https://nexusfeature.ddnsfree.com/configs/10K.data",
+    "checksum_sha256": "*",
+    "file_size": 10000,
+    "changelog": [
+      "Improved DNS lookup speed",
+      "Fixed user authentication bug",
+      "Updated UI responsiveness",
+      "Security patch for API v2"
+    ],
+    "minimum_supported_version": "2.0.0"
+  },
+  "server": {
+    "status": "online",
+    "maintenance_mode": false
+  }
+}
